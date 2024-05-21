@@ -1,4 +1,19 @@
-use super::{Token, TokenType};
+#[derive(Debug)]
+pub enum TokenType {
+    Keyword,
+    Identifier,
+    Literal,
+    Operator,
+    Punctuator,
+    Comment,
+}
+
+#[derive(Debug)]
+pub struct Token {
+    pub token_type: TokenType,
+    pub start: usize,
+    pub end: usize
+}
 
 pub struct Lexer<'a> {
     src: &'a str,
