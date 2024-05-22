@@ -6,5 +6,8 @@ fn main() {
     
     let mut parser = analyzer::Parser::new(&source, lexer);
     let res = parser.parse();
-    println!("{res:#?}");
+    match res {
+        Ok(tree) => println!("{tree:#?}"),
+        Err(err) => println!("{err}"),
+    };
 }
